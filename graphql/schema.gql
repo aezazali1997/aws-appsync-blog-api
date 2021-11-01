@@ -1,0 +1,21 @@
+type Blog {
+  id:ID!
+  heading:String!
+  image:String!
+  text:String!
+}
+type Query {
+  UI__getAllBlogs : [Blog]
+  UI__getBlog(id:ID!) : Blog
+}
+input blogInput {
+  id:String
+  heading:String
+  image:String
+  text:String
+}
+type Mutation {
+  addBlog(input:blogInput):Blog
+  deleteBlog(id:ID!):String
+  updateBlog(id:ID!,input:blogInput):Blog
+}
